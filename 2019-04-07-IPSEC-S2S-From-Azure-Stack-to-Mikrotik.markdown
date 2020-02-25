@@ -1,3 +1,8 @@
+---
+layout: post
+title:  "IPSEC S2S From Azure Stack to Mikrotik"
+date:   2019-04-07
+---
 Requirements (As far I know ya hehe)
 ====================================
 
