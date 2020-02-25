@@ -165,9 +165,9 @@ UPDATE!!
     solution is you can change the MTU on the VM(s) to 1350.
 
 -   Or if you have many VM(s), you can setup mangle rule from Mikrotik.
-    And here’s script
-    ```ip firewall mangle add action=change-mss chain=forward new-mss=1350 out-interface=ether1 passthrough=yes protocol=tcp tcp-flags=syn tcp-mss=1351-65535```
-    ```ip firewall mangle add action=change-mss chain=forward in-interface=ether1 new-mss=1350 passthrough=yes protocol=tcp tcp-flags=syn tcp-mss=1351-65535```
+    And here’s script :
+> ip firewall mangle add action=change-mss chain=forward new-mss=1350 out-interface=ether1 passthrough=yes protocol=tcp tcp-flags=syn tcp-mss=1351-65535
+> ip firewall mangle add action=change-mss chain=forward in-interface=ether1 new-mss=1350 passthrough=yes protocol=tcp tcp-flags=syn tcp-mss=1351-65535
 
 References that might/should be usefull
 =======================================
