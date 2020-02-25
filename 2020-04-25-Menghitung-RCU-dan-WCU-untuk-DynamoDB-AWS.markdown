@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Menghitung RCU dan WCU untuk DynamoDB AWS"
-date:   2020-04-25
+date:   2020-02-25
 ---
 Menghitung RCU dan WCU untuk DynamoDB AWS
 ====
