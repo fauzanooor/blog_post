@@ -11,13 +11,14 @@ Tenant
 - *Tenant* ini punya nama lain yaitu *organization* dan juga *directory*
 - Tenant ini berkaitannya dengan AAD (Azure Active Directory)
 - Tenant sendiri itu ada 2 bentuk, yaitu :
-  - Tenant ID (Contoh : 12321001-456e-0987-098c-abcd05babcdef)
-  - Tenant name (Contoh : kangbuburtimor.onmicrosoft.com)
+  - Tenant ID (Contoh : **12321001-456e-0987-098c-abcd05babcdef**)
+  - Tenant name (Contoh : **kangbuburtimor.onmicrosoft.com**)
 - Product Cloud milik Microsoft, seperti Office 365 dan Azure itu pasti mempunyai tenant 
 - Setiap subscription itu pasti ada tenant-nya, tetapi setiap tenant tidak tentu ada subscriptionnya
   - Yang berarti untuk memakai subscription, diharuskan membuat tenant dahulu
 - 1 Tenant itu bisa pake multiple subscriptions
 - Kalau di analogikan, tenant ini kek roti Pizza-nya
+
 ![alt text](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-03-09-Pindah-Subscription-Azure-antar-Tenant/roti-pizza.png "Roti Pizza")
 
 Subscription
@@ -37,6 +38,14 @@ Subscription
   - Terus, list tipe offer buat Azure itu apa aja sih? Bisa check disini <https://azure.microsoft.com/en-us/support/legal/offer-details/>
 <p align="center">
     <img src"https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-03-09-Pindah-Subscription-Azure-antar-Tenant/roti-pizza-toping.png">
+</p>
+<p align="center">
+  <b>Some Links:</b><br>
+  <a href="#">Link 1</a> |
+  <a href="#">Link 2</a> |
+  <a href="#">Link 3</a>
+  <br><br>
+  <img src="http://s.4cdn.org/image/title/105.gif">
 </p>
 
 Sampai sini, sudah paham bedanya tenant dan subscription di Azure kan? Nha ada lagi requirement nya nih, yaitu 
