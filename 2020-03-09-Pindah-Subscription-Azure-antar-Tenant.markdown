@@ -19,8 +19,9 @@ Tenant
 - 1 Tenant itu bisa pake multiple subscriptions
 - Kalau di analogikan, tenant ini kek roti Pizza-nya
 
-![alt text](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-03-09-Pindah-Subscription-Azure-antar-Tenant/roti-pizza.png "Roti Pizza")
-
+<p align="center">
+  <img width="250" height="250" src="https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-03-09-Pindah-Subscription-Azure-antar-Tenant/roti-pizza.png">
+</p>
 Subscription
 ===
 - Kalo berdasarkan tingkatan, ini yang satu tingkat persis dari tenant, dan dapat dipakai setelah tenant terbuat
@@ -37,7 +38,7 @@ Subscription
   - Misal, offer dengan tipe Pay-As-You-Go (0003P), Visual Studio Enterprise - MPN (0029P), Azure in CSP (0145P) itu tiap offer-nya punya masing - masing terms & benefit yang berbeda sesuai dengan tujuan dari offer itu ditujukan.
   - Terus, list tipe offer buat Azure itu apa aja sih? Bisa check disini <https://azure.microsoft.com/en-us/support/legal/offer-details/>
 <p align="center">
-  <img src="https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-03-09-Pindah-Subscription-Azure-antar-Tenant/roti-pizza-toping.png">
+  <img width="250" height="250" src="https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-03-09-Pindah-Subscription-Azure-antar-Tenant/roti-pizza-toping.png">
 </p>
 
 Sampai sini, sudah paham bedanya tenant dan subscription di Azure kan? Nha ada lagi requirement nya nih, yaitu 
