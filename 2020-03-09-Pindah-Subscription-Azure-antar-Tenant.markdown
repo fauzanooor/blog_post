@@ -3,11 +3,10 @@ layout: post
 title:  "Pindah Subscription Azure antar Tenant"
 date:   2020-03-09
 ---
-Pindah Subscription Azure antar Tenant
-====
 Sebelum bahas ke topik utamanya tentang mindahin resources-nya, gue coba jelasin dahulu hirarki subscription dan tenant di Azure itu apa yak, biar sama dulu persepsi kita hehe
 
-## Tenant
+Tenant
+===
 - Kalo berdasarkan tingkatan, ini yang paling utama (bawah), dan dibuat-nya itu yang paling pertama
 - *Tenant* ini punya nama lain yaitu *organization* dan juga *directory*
 - Tenant ini berkaitannya dengan AAD (Azure Active Directory)
@@ -21,31 +20,34 @@ Sebelum bahas ke topik utamanya tentang mindahin resources-nya, gue coba jelasin
 - Kalau di analogikan, tenant ini kek roti Pizza-nya
 ![alt text](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-03-09-Pindah-Subscription-Azure-antar-Tenant/roti-pizza.png "Roti Pizza")
 
-## Subscription 
+Subscription
+===
 - Kalo berdasarkan tingkatan, ini yang satu tingkat persis dari tenant, dan dapat dipakai setelah tenant terbuat
 - Kalo cuma ada subscription doang, tapi ngga ada tenant-nya, maka subscription nya ngga bisa dipake
 - Tujuan-nya ada subscription itu agar bisa memakai resources atau fitur - fitur dari yang disediakan oleh Azure nya
   -  Misal, mau buat Virtual Machine, maka harus punya subscription juga. Kalo cuma punya tenant aja, yaa ngga bisa..
 - Sama seperti tenant, Subscription juga ada 2 bentuk, yaitu :
-  - Subscription ID (Contoh : 1a2345b1-234c-561d-234c-a1234b5612c3)
-  - Subscription name (Contoh : Visual Studio Enterprise - MPN)
+  - Subscription ID (Contoh : **1a2345b1-234c-561d-234c-a1234b5612c3**)
+  - Subscription name (Contoh : **Visual Studio Enterprise - MPN**)
 - 1 Subscription itu ngga bisa dipake di-multiple tenant
 - Kalau di analogikan, subscription ini kek toping yang ditaro di atas pizza-nya
   - Yang mana roti pizza-nya (tenant), bisa dipakein toping yang banyak (subscriptions)
 - Dan satu lagi, Subscription itu juga punya offer, yang mana offer ini adalah tipe dari subscription yang dipake. 
   - Misal, offer dengan tipe Pay-As-You-Go (0003P), Visual Studio Enterprise - MPN (0029P), Azure in CSP (0145P) itu tiap offer-nya punya masing - masing terms & benefit yang berbeda sesuai dengan tujuan dari offer itu ditujukan.
-  - Terus, list tipe offer buat Azure itu apa aja sih? Bisa check disini https://azure.microsoft.com/en-us/support/legal/offer-details/
-![alt text](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-03-09-Pindah-Subscription-Azure-antar-Tenant/roti-pizza-toping.png "Roti Pizza dengan Toping")
+  - Terus, list tipe offer buat Azure itu apa aja sih? Bisa check disini <https://azure.microsoft.com/en-us/support/legal/offer-details/>
+
+<img align="center" src"https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-03-09-Pindah-Subscription-Azure-antar-Tenant/roti-pizza-toping.png">
 
 Sampai sini, sudah paham bedanya tenant dan subscription di Azure kan? Nha ada lagi requirement nya nih, yaitu 
 
-## Requirement 
+Requirement
+===
 1. Subscription yang akan dipindahkan
 2. User yang mempunyai role **owner**, di level subscription nya
 3. User tersebut, juga mempunyai akses ke-2 tenant-nya (tenant lama dan yg baru)
 
-## Langkah - Langkah
-
+Langkah - Langkah
+===
 ### Langkah 1 - **Assessment**
 ![alt text](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-03-09-Pindah-Subscription-Azure-antar-Tenant/step-01.png "Langkah 1")
 - Tenant lama : (kiri) cakwejkt.onmicrosoft.com
