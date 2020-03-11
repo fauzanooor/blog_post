@@ -88,6 +88,7 @@ Pada contoh tutor disini itu memakai :
   <img src="https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-03-09-Pindah-Subscription-Azure-antar-Tenant/step-01-flow.png">
 </p>
 
+{:start="2"}
 2. Nanti kalo sudah, akan muncul notif tentang link invitation-nya, dan juga akan dikirimkan email tentang link invitation-nya
 
 <p align="center">
@@ -100,6 +101,7 @@ atau
   <img src="https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-03-09-Pindah-Subscription-Azure-antar-Tenant/step-01-notif-email.png">
 </p>
 
+{:start="3"}
 3. Klik invitation link tersebut, dan pilih tombol **accept**
 
 <p align="center">
@@ -132,12 +134,14 @@ Verifikasi kalo user kang@buburtimor.xyz udah punya subscription **subs_buburtim
   <img src="https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-03-09-Pindah-Subscription-Azure-antar-Tenant/step-04-change-dir.png">
 </p>
 
+{:start="2"}
 2. Pilih nama tenant baru-nya (*buburtimor.xyz*), dan save
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-03-09-Pindah-Subscription-Azure-antar-Tenant/step-04-change-dir-lg.png">
 </p>
 
+{:start="3"}
 3. Nanti akan muncul notif bahwa subscription *subs_buburtimor* telah dipindahkan ke tenant yang baru, namun untuk proses pemindahan ini butuh waktu sekitar 30 menit
 
 <p align="center">
@@ -163,7 +167,8 @@ Verifikasi kalo user kang@buburtimor.xyz udah punya subscription **subs_buburtim
 <p align="center">
   <img src="https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-03-09-Pindah-Subscription-Azure-antar-Tenant/step-05-yes-subs.png">
 </p>
-  
+
+{:start="3"}  
 3. Dan juga jika kita check subscription pada tenant lama (*cakwejkt.onmicrosoft.com*) sudah tidak mempunyai subscription apapun
 
 <p align="center">
