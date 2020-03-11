@@ -43,7 +43,9 @@ Kamar hotel ini kita anggap sebagai **resources yang disediakan oleh Azure**-nya
 
 Nha, sedangkan untuk dapat menikmati fasilitas kamar hotel tersebut (azure resources), kita harus sewa alias bayar dulu kan ya, dan kalo udah bayar baru kita dapat kunci kamar hotel-nya. Nha kunci kamar hotel ini yang bisa kita analogikan sebagai **subscription**, yang mana dengan memiliki kunci (subscription) ini, kita bisa memakai fasilitas - fasilitas yang disediakan oleh Hotel tersebut.
 
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-03-09-Pindah-Subscription-Azure-antar-Tenant/analogy.png "Analogy")
+<p align="center">
+  <img src="https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-03-09-Pindah-Subscription-Azure-antar-Tenant/analogy.png">
+</p>
 
 Sampai sini, sudah paham bedanya tenant dan subscription di Azure kan? Nha ada lagi requirement nya nih, yaitu 
 
@@ -58,8 +60,11 @@ Langkah - Langkah
 
 ### Langkah 1 - **Assessment**
 
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-03-09-Pindah-Subscription-Azure-antar-Tenant/step-01.png "Langkah 1")
+<p align="center">
+  <img src="https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-03-09-Pindah-Subscription-Azure-antar-Tenant/step-01.png">
+</p>
 
+Pada contoh tutor disini itu memakai :
 - Tenant lama : (kiri) cakwejkt.onmicrosoft.com
   - Subscription : *subs_buburtimor*
   - User : *kang@cakwejkt.onmicrosoft.com*
@@ -68,63 +73,103 @@ Langkah - Langkah
   - User : *kang@buburtimor.xyz*
 
 ### Langkah 2 - **Inviting User**
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-03-09-Pindah-Subscription-Azure-antar-Tenant/step-02.png "Langkah 2")
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-03-09-Pindah-Subscription-Azure-antar-Tenant/step-02.png">
+</p>
+
 1. Pada tenant lama (cakwejkt.onmicrosoft.com), masuk ke menu subscription > pilih subscription-nya > Access Control (IAM) > Add > Add role assignment
    - Role : Owner
    - Assign access to : Azure AD user, group, or service principal
    - Select : (isi akun yang akan diinvite), dalam tutor ini *kang@buburtimor.xyz*
    - Save
-  
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-03-09-Pindah-Subscription-Azure-antar-Tenant/step-01-flow.png)
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-03-09-Pindah-Subscription-Azure-antar-Tenant/step-01-flow.png">
+</p>
 
 2. Nanti kalo sudah, akan muncul notif tentang link invitation-nya, dan juga akan dikirimkan email tentang link invitation-nya
 
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-03-09-Pindah-Subscription-Azure-antar-Tenant/step-01-notif.png)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-03-09-Pindah-Subscription-Azure-antar-Tenant/step-01-notif.png">
+</p>
 
 atau
 
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-03-09-Pindah-Subscription-Azure-antar-Tenant/step-01-notif-email.png)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-03-09-Pindah-Subscription-Azure-antar-Tenant/step-01-notif-email.png">
+</p>
 
 3. Klik invitation link tersebut, dan pilih tombol **accept**
 
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-03-09-Pindah-Subscription-Azure-antar-Tenant/step-01-notif-web.png)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-03-09-Pindah-Subscription-Azure-antar-Tenant/step-01-notif-web.png">
+</p>
 
 
 ### Langkah 3 - **Verifikasi Subscription**
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-03-09-Pindah-Subscription-Azure-antar-Tenant/step-01.png)
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-03-09-Pindah-Subscription-Azure-antar-Tenant/step-03.png">
+</p>
 
 Verifikasi kalo user kang@buburtimor.xyz udah punya subscription **subs_buburtimor** di tenant *cakwejkt.onmicrosoft.com*
 
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-03-09-Pindah-Subscription-Azure-antar-Tenant/step-01-verify.png)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-03-09-Pindah-Subscription-Azure-antar-Tenant/step-01-verify.png">
+</p>
 
 
 ### Langkah 4 - **Pindahin Subscription ke Tenant lain**
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-03-09-Pindah-Subscription-Azure-antar-Tenant/step-04.png)
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-03-09-Pindah-Subscription-Azure-antar-Tenant/step-04.png">
+</p>
 
 1. Masih pada tenant *cakwejkt.onmicrosoft.com*, pergi ke menu subscription > pilih subscription nya > change directory 
 
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-03-09-Pindah-Subscription-Azure-antar-Tenant/step-04-change-dir.png)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-03-09-Pindah-Subscription-Azure-antar-Tenant/step-04-change-dir.png">
+</p>
 
 2. Pilih nama tenant baru-nya (*buburtimor.xyz*), dan save
 
-![alt](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-03-09-Pindah-Subscription-Azure-antar-Tenant/step-04-change-dir-lg.png)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-03-09-Pindah-Subscription-Azure-antar-Tenant/step-04-change-dir-lg.png">
+</p>
 
 3. Nanti akan muncul notif bahwa subscription *subs_buburtimor* telah dipindahkan ke tenant yang baru, namun untuk proses pemindahan ini butuh waktu sekitar 30 menit
 
-![alt](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-03-09-Pindah-Subscription-Azure-antar-Tenant/step-04-change-dir-notif.png)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-03-09-Pindah-Subscription-Azure-antar-Tenant/step-04-change-dir-notif.png">
+</p>
 
 
 ### Langkah 5 - **Verifikasi Subscription telah pindah ke Tenant Baru**
-![alt](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-03-09-Pindah-Subscription-Azure-antar-Tenant/step-05.png)
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-03-09-Pindah-Subscription-Azure-antar-Tenant/step-05.png">
+</p>
 
 1. Pindah ke tenant baru (buburtimor.xyz), dengan cara klik tombol directory yang disisi kanan atas > Dan pilih directory *buburtimor.xyz*
 
-![alt](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-03-09-Pindah-Subscription-Azure-antar-Tenant/step-05-change-dir.png)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-03-09-Pindah-Subscription-Azure-antar-Tenant/step-05-change-dir.png">
+</p>
 
 2. Dan jika kita masuk ke menu subscription-nya, maka pada tenant *buburtimor.xyz* ini sudah ada subscription *subs_buburtimor* nya
 
-![alt](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-03-09-Pindah-Subscription-Azure-antar-Tenant/step-05-yes-subs.png)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-03-09-Pindah-Subscription-Azure-antar-Tenant/step-05-yes-subs.png">
+</p>
 
 3. Dan juga jika kita check subscription pada tenant lama (*cakwejkt.onmicrosoft.com*) sudah tidak mempunyai subscription apapun
 
-![alt](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-03-09-Pindah-Subscription-Azure-antar-Tenant/step-05-no-subs.png)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-03-09-Pindah-Subscription-Azure-antar-Tenant/step-05-no-subs.png">
+</p>
+
+
+---
+Seperti itu..
+===
