@@ -151,19 +151,20 @@ Verifikasi kalo user kang@buburtimor.xyz udah punya subscription **subs_buburtim
   <img src="https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-03-09-Pindah-Subscription-Azure-antar-Tenant/step-05.png">
 </p>
 
-   1. Pindah ke tenant baru (buburtimor.xyz), dengan cara klik tombol directory yang disisi kanan atas > Dan pilih directory *buburtimor.xyz*
+1. Pindah ke tenant baru (buburtimor.xyz), dengan cara klik tombol directory yang disisi kanan atas > Dan pilih directory *buburtimor.xyz*
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-03-09-Pindah-Subscription-Azure-antar-Tenant/step-05-change-dir.png">
 </p>
 
-  2. Dan jika kita masuk ke menu subscription-nya, maka pada tenant *buburtimor.xyz* ini sudah ada subscription *subs_buburtimor* nya
+{:start="2"}
+2. Dan jika kita masuk ke menu subscription-nya, maka pada tenant *buburtimor.xyz* ini sudah ada subscription *subs_buburtimor* nya
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-03-09-Pindah-Subscription-Azure-antar-Tenant/step-05-yes-subs.png">
 </p>
   
-  3. Dan juga jika kita check subscription pada tenant lama (*cakwejkt.onmicrosoft.com*) sudah tidak mempunyai subscription apapun
+3. Dan juga jika kita check subscription pada tenant lama (*cakwejkt.onmicrosoft.com*) sudah tidak mempunyai subscription apapun
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-03-09-Pindah-Subscription-Azure-antar-Tenant/step-05-no-subs.png">
