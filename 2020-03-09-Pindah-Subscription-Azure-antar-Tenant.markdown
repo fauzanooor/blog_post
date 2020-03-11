@@ -17,11 +17,6 @@ Tenant
 - Setiap subscription itu pasti ada tenant-nya, tetapi setiap tenant tidak tentu ada subscriptionnya
   - Yang berarti untuk memakai subscription, diharuskan membuat tenant dahulu
 - 1 Tenant itu bisa pake multiple subscriptions
-- Kalau di analogikan, tenant ini kek roti Pizza-nya
-
-<p align="center">
-  <img width="250" height="250" src="https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-03-09-Pindah-Subscription-Azure-antar-Tenant/roti-pizza.png">
-</p>
 
 Subscription
 ===
@@ -33,14 +28,22 @@ Subscription
   - Subscription ID (Contoh : **1a2345b1-234c-561d-234c-a1234b5612c3**)
   - Subscription name (Contoh : **Visual Studio Enterprise - MPN**)
 - 1 Subscription itu ngga bisa dipake di-multiple tenant
-- Kalau di analogikan, subscription ini kek toping yang ditaro di atas pizza-nya
-  - Yang mana roti pizza-nya (tenant), bisa dipakein toping yang banyak (subscriptions)
 - Dan satu lagi, Subscription itu juga punya offer, yang mana offer ini adalah tipe dari subscription yang dipake. 
   - Misal, offer dengan tipe Pay-As-You-Go (0003P), Visual Studio Enterprise - MPN (0029P), Azure in CSP (0145P) itu tiap offer-nya punya masing - masing terms & benefit yang berbeda sesuai dengan tujuan dari offer itu ditujukan.
   - Terus, list tipe offer buat Azure itu apa aja sih? Bisa check disini <https://azure.microsoft.com/en-us/support/legal/offer-details/>
-<p align="center">
-  <img width="250" height="250" src="https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-03-09-Pindah-Subscription-Azure-antar-Tenant/roti-pizza-toping.png">
-</p>
+
+
+Analogi
+===
+Jadi kalo di-analogikan, Azure itu seperti Hotel yang mana di dalam hotel itu kan ada lobby dan kamar hotel beserta kunci kamar-nya.
+
+Lobby ini kita anggap sebagai **tenant**, yang mana misalkan orang (user) kalo cuma masuk ke lobby doang itu kan gratis, tapi ngga bakal bisa menikmati fasilitas dari hotel tersebut.
+
+Kamar hotel ini kita anggap sebagai **resources yang disediakan oleh Azure**-nya, karena kan di dalam kamar hotel tersebut ada fasilitas seperti kasur, TV, dan lain - lain, yang mana fasilitas tersebut bisa kita samakan seperti VMs, Load Balancer, VNet, dll.
+
+Nha, sedangkan untuk dapat menikmati fasilitas kamar hotel tersebut (azure resources), kita harus sewa alias bayar dulu kan ya, dan kalo udah bayar baru kita dapat kunci kamar hotel-nya. Nha kunci kamar hotel ini yang bisa kita analogikan sebagai **subscription**, yang mana dengan memiliki kunci (subscription) ini, kita bisa memakai fasilitas - fasilitas yang disediakan oleh Hotel tersebut.
+
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-03-09-Pindah-Subscription-Azure-antar-Tenant/analogy.png "Analogy")
 
 Sampai sini, sudah paham bedanya tenant dan subscription di Azure kan? Nha ada lagi requirement nya nih, yaitu 
 
