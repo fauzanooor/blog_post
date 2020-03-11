@@ -83,25 +83,18 @@ Pada contoh tutor disini itu memakai :
    - Assign access to : Azure AD user, group, or service principal
    - Select : (isi akun yang akan diinvite), dalam tutor ini *kang@buburtimor.xyz*
    - Save
-
 <p align="center">
   <img src="https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-03-09-Pindah-Subscription-Azure-antar-Tenant/step-01-flow.png">
 </p>
-
 2. Nanti kalo sudah, akan muncul notif tentang link invitation-nya, dan juga akan dikirimkan email tentang link invitation-nya
-
 <p align="center">
   <img src="https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-03-09-Pindah-Subscription-Azure-antar-Tenant/step-01-notif.png">
 </p>
-
 atau
-
 <p align="center">
   <img src="https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-03-09-Pindah-Subscription-Azure-antar-Tenant/step-01-notif-email.png">
 </p>
-
 3. Klik invitation link tersebut, dan pilih tombol **accept**
-
 <p align="center">
   <img src="https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-03-09-Pindah-Subscription-Azure-antar-Tenant/step-01-notif-web.png">
 </p>
@@ -127,19 +120,14 @@ Verifikasi kalo user kang@buburtimor.xyz udah punya subscription **subs_buburtim
 </p>
 
 1. Masih pada tenant *cakwejkt.onmicrosoft.com*, pergi ke menu subscription > pilih subscription nya > change directory 
-
 <p align="center">
   <img src="https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-03-09-Pindah-Subscription-Azure-antar-Tenant/step-04-change-dir.png">
 </p>
-
 2. Pilih nama tenant baru-nya (*buburtimor.xyz*), dan save
-
 <p align="center">
   <img src="https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-03-09-Pindah-Subscription-Azure-antar-Tenant/step-04-change-dir-lg.png">
 </p>
-
 3. Nanti akan muncul notif bahwa subscription *subs_buburtimor* telah dipindahkan ke tenant yang baru, namun untuk proses pemindahan ini butuh waktu sekitar 30 menit
-
 <p align="center">
   <img src="https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-03-09-Pindah-Subscription-Azure-antar-Tenant/step-04-change-dir-notif.png">
 </p>
@@ -152,19 +140,14 @@ Verifikasi kalo user kang@buburtimor.xyz udah punya subscription **subs_buburtim
 </p>
 
 1. Pindah ke tenant baru (buburtimor.xyz), dengan cara klik tombol directory yang disisi kanan atas > Dan pilih directory *buburtimor.xyz*
-
 <p align="center">
   <img src="https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-03-09-Pindah-Subscription-Azure-antar-Tenant/step-05-change-dir.png">
 </p>
-
 2. Dan jika kita masuk ke menu subscription-nya, maka pada tenant *buburtimor.xyz* ini sudah ada subscription *subs_buburtimor* nya
-
 <p align="center">
   <img src="https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-03-09-Pindah-Subscription-Azure-antar-Tenant/step-05-yes-subs.png">
 </p>
-
 3. Dan juga jika kita check subscription pada tenant lama (*cakwejkt.onmicrosoft.com*) sudah tidak mempunyai subscription apapun
-
 <p align="center">
   <img src="https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-03-09-Pindah-Subscription-Azure-antar-Tenant/step-05-no-subs.png">
 </p>
