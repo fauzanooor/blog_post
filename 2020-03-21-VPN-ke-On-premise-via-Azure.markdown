@@ -122,7 +122,9 @@ Step 2 - Point-to-Site VPN
 
 Kesimpulan
 ===
-Jadi kesimpulannya itu sebenernya secara deployment nya sama persis dengan deployment VPN seperti biasanya, hanya saja pada koneksi s2s-nya di-*advertise* atau ditambahkan juga segment P2S-nya. Dan pada sisi end-user-nya diharuskan menambahkan statik route yang mengarah ke segment on-premise nya via gateway P2S-nya.
+Jadi kesimpulannya itu sebenernya secara deployment nya sama persis dengan deployment VPN seperti biasanya, yang penting itu :
+- Pada koneksi s2s-nya (azure ke on-premise) di-*advertise* atau ditambahkan juga segment P2S-nya, dan 
+- Pada sisi end-user-nya diharuskan menambahkan statik route yang mengarah ke segment on-premise nya via gateway P2S-nya.
 
 
 ---
