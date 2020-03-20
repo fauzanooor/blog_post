@@ -4,6 +4,7 @@ title:  "VPN ke On-Premise via Azure"
 date:   2020-03-21
 ---
 Sebenernya gue agak bingung sih buat namain judulnya apaan, tapi mungkin kalo gue jelasin case nya baru pada paham harusnya hehe
+Atau harusnya judulnya itu VPNaaS kali yak? (VPN as a Service) HHHH
 
 Penjelasan Kasus
 ===
