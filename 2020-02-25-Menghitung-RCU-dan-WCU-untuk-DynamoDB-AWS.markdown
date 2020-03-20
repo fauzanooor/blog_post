@@ -93,3 +93,7 @@ Lanjut ke perhitungan-nya, jadi secara perhitungan-nya itu dibagi jadi 2 ya, per
 				- **``Item A : 2.5 KB = 3 KB``**
 				- **``Item B : 500 B = 1 KB``**
 				- **``WCU = 3 KB + 1 KB = 4 KB``**
+
+---
+
+Seperti itu..
