@@ -1,5 +1,6 @@
 ---
-layout: "VPN ke On-Premise via Azure"
+layout: post
+title:  "VPN ke On-Premise via Azure"
 date:   2020-03-21
 ---
 Sebenernya gue agak bingung sih buat namain judulnya apaan, tapi mungkin kalo gue jelasin case nya baru pada paham harusnya hehe
@@ -80,7 +81,7 @@ Step 2 - Point-to-Site VPN
   <img src="https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-03-21-VPN-ke-On-premise-via-Azure/p2s-configured.png">
 </p>
 
-{:start="2"}
+{:start="3"}
 3. Kalau step 1 dan 2 sudah, bisa download P2S VPN Client yang dari Azure nya, dengan cara klik tombol **Download VPN Client** pada menu point-to-site configuration tersebut, dan nanti akan terdownload 1 file berformat **.zip**
 
 <p align="center">
