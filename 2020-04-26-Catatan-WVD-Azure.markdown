@@ -147,7 +147,7 @@ Dan untuk yang *-DomainAccountType* itu sebenernya ada 2 pilihan, yaitu tipe Com
 Nha kalo udah, kalo kita liat di menu configuration yang ada di storage account-nya, nanti opsi untuk **Active Directory** dan juga info dari **Joined Domain** udah ke-ubah jadi seperti ini contoh nya
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/fauzanooor/blog_post/">
+  <img src="#">
 </p>
 
 Tapii belom selesai, ada 1 step lagi yang perlu dilakuin agar file share yg ada di storage account ini bisa dipake. Dan berikut ini command nya :
