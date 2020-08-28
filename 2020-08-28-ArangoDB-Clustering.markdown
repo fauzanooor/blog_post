@@ -46,6 +46,9 @@ Contoh Implementasi
   <img src="https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-08-28-ArangoDB-Clustering/topology_1.png">
 </p>
 
+> [!CAUTION]
+> Btw arsitektur dari topologi ini cuma buat testing aja ya, soale secara agency dan coordinator komponen nya itu ngga redundan, dan autentikasi pada konfig di bawah ini itu ngga dipake.
+
 ## Config
 ### Download & Installasi ArangoDB
 
