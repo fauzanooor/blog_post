@@ -175,6 +175,8 @@ Verifikasi kalo user kang@buburtimor.xyz udah punya subscription **subs_buburtim
   <img src="https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-03-09-Pindah-Subscription-Azure-antar-Tenant/step-05-no-subs.png">
 </p>
 
+## Keterangan Tambahan
+- Semua resources yang ada di dalam Subscription itu, akan kepindah juga
 
 ---
 
