@@ -17,43 +17,24 @@ Persiapan
 ### **VPC**
 
 -   VPC Name : Bangau-VPC
-
 -   VPC CIDR : 10.0.0.0/16
-
 -   Region : Singapore
-
 -   Subnets :
-
     -   Subnet 1 – Name : bangau-public-a
-
         -   Availability Zone : A
-
         -   CIDR : 10.0.0.0/24
-
         -   Keterangan : Untuk public subnet
-
     -   Subnet 2 – Name : bangau-public-b
-
         -   Availability Zone : B
-
         -   CIDR : 10.0.10.0/24
-
         -   Keterangan : Untuk public subnet
-
     -   Subnet 3 – Name : bangau-private-a
-
         -   Availability Zone : A
-
         -   CIDR : 10.0.1.0/24
-
         -   Keterangan : Untuk private subnet
-
     -   Subnet 4 – Name : bangau-private-b
-
         -   Availability Zone : B
-
         -   CIDR : 10.0.2.0/24
-
         -   Keterangan : Untuk private subnet
 
 -   Route Table
@@ -68,19 +49,12 @@ Persiapan
 |                      | bangau-public-b  | 0.0.0.0/0   | bangau-igw   |
 
 -   Internet gateway
-
     -   Name : bangau-igw
-
     -   Attached to : bangau-VPC
-
 -   Nat Gateway
-
     -   NatGateway 1 – Name : bangau-ngw-1
-
         -   Attached to : bangau-public-a
-
     -   NatGateway 2 – Name : bangau-ngw-2
-
         -   Attached to : bangau-public-b
 
 ### **VPC – Screenshots**
@@ -97,8 +71,7 @@ Persiapan
 
 ### **Security Groups**
 
-Melakukan pembuatan security group untuk instances dan ALB nya, dengan
-detail sebagai berikut :
+Melakukan pembuatan security group untuk instances dan ALB nya, dengan detail sebagai berikut :
 
 -   Security group name : bangau-sg-ec2
 
@@ -123,45 +96,25 @@ detail sebagai berikut :
 
 ### **EC2 Sebagai Golden Image / Instance**
 
-Golden image atau instance ini dibuat untuk tujuan kalau nantinya ada
-perubahan konfigurasi pada instances yang telah diassigned pada ASG,
-serta instance ini juga bisa digunakan sebagai jumphost untuk koneksi ke
-instance yang tidak mempunyai IP Public. Dan berikut ini detail dari
-instance nya :
+Golden image atau instance ini dibuat untuk tujuan kalau nantinya ada perubahan konfigurasi pada instances yang telah diassigned pada ASG, serta instance ini juga bisa digunakan sebagai jumphost untuk koneksi ke instance yang tidak mempunyai IP Public. Dan berikut ini detail dari instance nya :
 
 -   Instance name : bangau-golden
-
 -   Region : Singapore
-
 -   Public IP : 18.136.187.242
-
 -   Private IP : 10.0.0.117
-
 -   Subnet : bangau-public-a (10.0.0.0/24)
-
 -   Specs
-
     -   Instance type : t2.micro
-
     -   Storage : 8G, gp2 (EBS)
-
 -   AMI :
-
     -   ID : ami-015a6758451df3cb9
-
     -   Name : Amazon Linux 2 (x64)
-
 -   Service/Application Installed
-
     -   Nginx with default config, but for the default web page is
         changed
-
     -   SSH
-
     -   codedeploy-agent (detail installasi akan dijelaskan di bawah)
-
 -   IAM Role : none
-
 -   Security group : bangau-sg-ec2
 
 ### **EC2 Sebagai Golden Image / Instance – Screenshots**
@@ -180,21 +133,12 @@ instance nya :
 
 ### **Pembuatan IAM Roles**
 
-IAM Roles yang dibuat disini untuk tujuan mengintegrasikan CodeDeploy
-nya dengan ASG-nya. Untuk hal tersebut diperlukan 2 roles, yang satu
-untuk EC2 dan yang satu lagi untuk CodeDeploy. Dan berikut ini detail
-konfigurasi nya :
-
+IAM Roles yang dibuat disini untuk tujuan mengintegrasikan CodeDeploy nya dengan ASG-nya. Untuk hal tersebut diperlukan 2 roles, yang satu untuk EC2 dan yang satu lagi untuk CodeDeploy. Dan berikut ini detail konfigurasi nya :
 -   Role name : bangau-ec2-codedeploy
-
     -   Trusted entity : EC2
-
     -   Permission : AmazonEC2RoleforAWSCodeDeploy
-
 -   Role name : CodeDeployServiceRole
-
     -   Trusted entity : CodeDeploy
-
     -   Permission : AWSCodeDeployRole
 
 ![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/iam1.png)
@@ -248,6 +192,8 @@ $ sudo systemctl restart nginx
 $ sudo systemctl enable nginx
 ```
 
+{:start="2"}
+
 2.  Install agent CodeDeploy
 ```
 $ sudo su
@@ -268,6 +214,7 @@ Capture Golden Instance as a AMI Golden Image
 
 ![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/ami1.png)
 
+{:start="2"}
 2.  Isi nama image-nya (bisa pakai format ini
     {nama-instance-ddmmyyy-hhmm}, kemudian centang **enable** no reboot
     agar ketika pembuatan image ini tidak me-restart instance yang
@@ -275,6 +222,7 @@ Capture Golden Instance as a AMI Golden Image
 
 ![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/ami2.png)
 
+{:start="3"}
 3.  Masuk ke menu **AMIs** yang ada di sisi kiri, kemudian tunggu hingga
     image yang baru dibuat selesai (state pending -> available)
 
@@ -292,6 +240,7 @@ Pembuatan Elastic Load Balancer
 
 ![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/elb1.png)
 
+{:start="2"}
 2.  Dan berikut ini detail konfigurasi dari Target Group nya :
 
     a.  Target type : Instances
