@@ -58,14 +58,14 @@ Persiapan
 
 -   Route Table
 
-  RouteTable Name        SubnetAssociate        Destination   Target
-  ---------------------- ------------------ --- ------------- --------------
-  bangau-rtb-private-a   bangau-private-a       10.0.0.0/16   local
-                                                0.0.0.0/0     bangau-ngw-1
-  bangau-rtb-private-b   bangau-private-b       10.0.0.0/16   Local
-                                                0.0.0.0/0     bangau-ngw-2
-  bangau-rtb-public      bangau-public-a        10.0.0.0/16   Local
-                         bangau-public-b        0.0.0.0/0     bangau-igw
+|    RouteTable Name   |  SubnetAssociate | Destination |    Target    |
+|:--------------------:|:----------------:|:-----------:|:------------:|
+| bangau-rtb-private-a | bangau-private-a | 10.0.0.0/16 | local        |
+|                      |                  | 0.0.0.0/0   | bangau-ngw-1 |
+| bangau-rtb-private-b | bangau-private-b | 10.0.0.0/16 | local        |
+|                      |                  | 0.0.0.0/0   | bangau-ngw-2 |
+| bangau-rtb-public    | bangau-public-a  | 10.0.0.0/16 | local        |
+|                      | bangau-public-b  | 0.0.0.0/0   | bangau-igw   |
 
 -   Internet gateway
 
@@ -102,20 +102,20 @@ detail sebagai berikut :
 
 -   Security group name : bangau-sg-ec2
 
-  **Rules Type**   **Type**      **Protocol**   **Port range**   **Source**
-  ---------------- ------------- -------------- ---------------- ------------
-  Inbound          HTTP          TCP            80               0.0.0.0/0
-                   HTTPS         TCP            443              0.0.0.0/0
-                   SSH           TCP            22               0.0.0.0/0
-  Outbound         All traffic   All            All              0.0.0.0/0
+ | **Rules Type**  | **Type**     | **Protocol**  | **Port range**  | **Source**    |
+ | ----------------| -------------| --------------| ----------------| ------------  |
+ | Inbound         | HTTP         | TCP           | 80              | 0.0.0.0/0     |
+ |                 | HTTPS        | TCP           | 443             | 0.0.0.0/0     |
+ |                 | SSH          | TCP           | 22              | 0.0.0.0/0     |
+ | Outbound        | All traffic  | All           | All             | 0.0.0.0/0     |
 
 -   Security group name : bangau-sg-alb
 
-  **Rules Type**   **Type**      **Protocol**   **Port range**   **Source**
-  ---------------- ------------- -------------- ---------------- ------------
-  Inbound          HTTP          TCP            80               0.0.0.0/0
-                   HTTPS         TCP            443              0.0.0.0/0
-  Outbound         All traffic   All            All              0.0.0.0/0
+|  **Rules Type**  | **Type**     | **Protocol**  | **Port range**   | **Source**   |
+|  ----------------| -------------| --------------| ---------------- | ------------ |
+|  Inbound         | HTTP         | TCP           | 80               | 0.0.0.0/0    |
+|                  | HTTPS        | TCP           | 443              | 0.0.0.0/0    |
+|  Outbound        | All traffic  | All           | All              | 0.0.0.0/0    |
 
 ### **Security Groups – Screenshot**
 
@@ -292,7 +292,7 @@ Pembuatan Elastic Load Balancer
 
 ![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/elb1.png)
 
-1.  Dan berikut ini detail konfigurasi dari Target Group nya :
+2.  Dan berikut ini detail konfigurasi dari Target Group nya :
 
     a.  Target type : Instances
 
@@ -312,7 +312,7 @@ Pembuatan Elastic Load Balancer
 
 ![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/elb3.png)
 
-1.  Dan jika target group sudah selesai dibuat, maka akan muncul seperti
+3.  Dan jika target group sudah selesai dibuat, maka akan muncul seperti
     ini
 
 ![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/elb4.png)
@@ -324,7 +324,7 @@ Pembuatan Elastic Load Balancer
 
 ![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/elb5.png)
 
-1.  Dan berikut ini detail konfigurasi load balancer nya :
+2.  Dan berikut ini detail konfigurasi load balancer nya :
 
     a.  Load balancer type : Application Load Balancer
 
@@ -342,11 +342,11 @@ Pembuatan Elastic Load Balancer
 
     g.  Availability zones : ap-southeast-1b : bangau-public-b
 
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/elb6.png)
-
     h.  Security group : bangau-sg-lb
     
     i.  Target group : bangau-tg
+
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/elb6.png)
 
 Dan jika sudah selesai dibuat, maka akan menjadi seperti screenshot di bawah ini
 
@@ -371,7 +371,7 @@ cepet hehe.
 
 ![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/asg1.png)
 
-1.  Dan berikut ini untuk detail konfigurasi launch configurations nya :
+2.  Dan berikut ini untuk detail konfigurasi launch configurations nya :
 
     -   Name : bangau-lc
 
@@ -384,8 +384,7 @@ cepet hehe.
 
     -   Security group : existing : bangau-sg-ec2
 
-    -   Key pair : *(menggunakan keypair yang sama seperti golde
-        instance)*
+    -   Key pair : *(menggunakan keypair yang sama seperti golden instance)*
 
 ![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/asg2.png)
 
