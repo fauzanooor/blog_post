@@ -406,7 +406,7 @@ dibuat.
 
 ![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/asg6.png)
 
-1.  Dan berikut ini detail konfigurasi ASG nya :
+2.  Dan berikut ini detail konfigurasi ASG nya :
 
     -   AutoScalingGroup name : bangau-asg
 
@@ -460,14 +460,9 @@ Ada 3 komponen yang digunakan oleh CodeDeploy, yaitu
 
 3.  Deployment
 
-Dan masing – masing punya keterkaitan satu sama lain, jika ingin membuat
-*Deployment*, diharuskan untuk membuat *Deployment Group* dahulu, namun
-jika ingin membuat *Deployment Group*, diharuskan membuat *Application*
-terlebih dahulu.
+Dan masing – masing punya keterkaitan satu sama lain, jika ingin membuat *Deployment*, diharuskan untuk membuat *Deployment Group* dahulu, namun jika ingin membuat *Deployment Group*, diharuskan membuat *Application* terlebih dahulu.
 
-Dan sebelum melakukan pembuatan ketiga komponen tersebut, kita perlu
-membuat satu file yang bernama **appspec.yml**, yang mana jika kita
-integrasi dengan EC2-nya, file ini berguna untuk 2 hal, yaitu :
+Dan sebelum melakukan pembuatan ketiga komponen tersebut, kita perlu membuat satu file yang bernama **appspec.yml**, yang mana jika kita integrasi dengan EC2-nya, file ini berguna untuk 2 hal, yaitu :
 
 1.  Apa saja yang harus diinstall atau diubah pada instance-nya (EC2)
     dari aplikasi yang sudah direvisi berdasarkan dari S3 atau
@@ -475,15 +470,10 @@ integrasi dengan EC2-nya, file ini berguna untuk 2 hal, yaitu :
 
 2.  Dan juga bisa sebagai lifecycle event hook, yang berarti kita dapat
     mengontrol bagaimana flow proses updating aplikasi kita akan
-    berjalan (seperti gambar di samping kanan)
+    berjalan (seperti gambar di bawah)
 
-Sebagai contoh, misal ketika ingin melakukan update ke versi yang lebih
-baru, ternyata diperlukan mematikan service *nginx* terlebih dahulu
-sebelum dilakukan update, maka pada event *BeforeInstall* diharuskan
-untuk membuat script yang melakukan stop service nginx-nya. Dan kemudian
-pada event *AfterInstall* membuat script lagi untuk melakukan start
-service nginx nya kembali. Dan juga lebih jelasnya bisa dibaca referensi
-dari sini
+Sebagai contoh, misal ketika ingin melakukan update ke versi yang lebih baru, ternyata diperlukan mematikan service *nginx* terlebih dahulu sebelum dilakukan update, maka pada event *BeforeInstall* diharuskan
+untuk membuat script yang melakukan stop service nginx-nya. Dan kemudian pada event *AfterInstall* membuat script lagi untuk melakukan start service nginx nya kembali. Dan juga lebih jelasnya bisa dibaca referensi dari sini
 
 <https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file.html>
 
@@ -543,7 +533,7 @@ github.
 
 ![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/cd2.png)
 
-1.  Dan berikut ini detail konfigurasi application nya :
+2.  Dan berikut ini detail konfigurasi application nya :
 
     a.  Application name : bangau-app-2
 
@@ -558,7 +548,7 @@ github.
 
 ![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/cd4.png)
 
-1.  Dan berikut ini detail konfigurasi deployment group nya :
+2.  Dan berikut ini detail konfigurasi deployment group nya :
 
     a.  Deployment group name : bangau-dg-2
 
