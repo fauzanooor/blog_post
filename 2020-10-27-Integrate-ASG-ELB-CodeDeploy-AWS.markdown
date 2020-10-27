@@ -215,16 +215,13 @@ Capture Golden Instance as a AMI Golden Image
 ![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/ami1.png)
 
 {:start="2"}
-2.  Isi nama image-nya (bisa pakai format ini
-    {nama-instance-ddmmyyy-hhmm}, kemudian centang **enable** no reboot
-    agar ketika pembuatan image ini tidak me-restart instance yang
-    sedang akan dibuat image-nya, dan klik tombol **create image**
+2.  Isi nama image-nya (bisa pakai format ini {nama-instance-ddmmyyy-hhmm}, kemudian centang **enable** no reboot agar ketika pembuatan image ini tidak me-restart instance yang sedang akan dibuat image-nya, dan klik tombol **create image**
 
 ![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/ami2.png)
 
 {:start="3"}
-3.  Masuk ke menu **AMIs** yang ada di sisi kiri, kemudian tunggu hingga
-    image yang baru dibuat selesai (state pending -> available)
+
+3.  Masuk ke menu **AMIs** yang ada di sisi kiri, kemudian tunggu hingga image yang baru dibuat selesai (state pending -> available)
 
 ![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/ami3.png)
 
@@ -241,25 +238,22 @@ Pembuatan Elastic Load Balancer
 ![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/elb1.png)
 
 {:start="2"}
+
 2.  Dan berikut ini detail konfigurasi dari Target Group nya :
-
-    a.  Target type : Instances
-
-    b.  Target group name : bangau-tg
-
-    c.  Protocol : HTTP
-
-    d.  Port : 80
-
-    e.  VPC : bangau-vpc
-
-    f.  Health check protocol : HTTP
-
-    g.  Health check path : /
+   
+    -  Target type : Instances
+    -  Target group name : bangau-tg
+    -  Protocol : HTTP
+    -  Port : 80
+    -  VPC : bangau-vpc
+    -  Health check protocol : HTTP
+    -  Health check path : /
 
 ![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/elb2.png)
 
 ![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/elb3.png)
+
+{:start="3"}
 
 3.  Dan jika target group sudah selesai dibuat, maka akan muncul seperti
     ini
@@ -273,27 +267,21 @@ Pembuatan Elastic Load Balancer
 
 ![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/elb5.png)
 
+{:start="2"}
+
 2.  Dan berikut ini detail konfigurasi load balancer nya :
 
-    a.  Load balancer type : Application Load Balancer
-
-    b.  Scheme : internet-facing
-
-    c.  IP address type : ipv4
-
-    d.  Listener
-    - Load balancer protocol : HTTP
-    - Load balancer port : 80
-  
-    e.  VPC : bangau-vpc
-
-    f.  Availability zones : ap-southeast-1a : bangau-public-a
-
-    g.  Availability zones : ap-southeast-1b : bangau-public-b
-
-    h.  Security group : bangau-sg-lb
-    
-    i.  Target group : bangau-tg
+    -  Load balancer type : Application Load Balancer
+    -  Scheme : internet-facing
+    -  IP address type : ipv4
+    -  Listener
+      - Load balancer protocol : HTTP
+      - Load balancer port : 80
+    -  VPC : bangau-vpc
+    -  Availability zones : ap-southeast-1a : bangau-public-a
+    -  Availability zones : ap-southeast-1b : bangau-public-b
+    -  Security group : bangau-sg-lb
+    -  Target group : bangau-tg
 
 ![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/elb6.png)
 
@@ -310,29 +298,22 @@ Pembuatan Auto Scaling Group
 
 ### **Pembuatan Launch Configurations**
 
-Sebenarnya bisa juga menggunakan *Launch Template* dan bahkan lebih baik
-pakai Launch Template ini dibandingkan dengan Launch Configurations,
-namun pada tutorial ini memakai Launch Configuration saja, biar lebih
-cepet hehe.
+Sebenarnya bisa juga menggunakan *Launch Template* dan bahkan lebih baik pakai Launch Template ini dibandingkan dengan Launch Configurations, namun pada tutorial ini memakai Launch Configuration saja, biar lebih cepet hehe.
 
-1.  Masuk ke services EC2 > Auto Scaling > Launch Configurations,
-    kemudian klik tombol **Create launch configurations**
+1.  Masuk ke services EC2 > Auto Scaling > Launch Configurations, kemudian klik tombol **Create launch configurations**
 
 ![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/asg1.png)
+
+{:start="2"}
 
 2.  Dan berikut ini untuk detail konfigurasi launch configurations nya :
 
     -   Name : bangau-lc
-
     -   AMI : bangau-golden-26102020-1156 *(AMI yang berasal dari
         capture golden instance pada langkah sebelumnya)*
-
     -   Instance type : t2.micro
-
     -   IAM instance profile : bangau-ec2-codedeploy
-
     -   Security group : existing : bangau-sg-ec2
-
     -   Key pair : *(menggunakan keypair yang sama seperti golden instance)*
 
 ![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/asg2.png)
@@ -355,35 +336,23 @@ dibuat.
 
 ![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/asg6.png)
 
+{:start="2"}
+
 2.  Dan berikut ini detail konfigurasi ASG nya :
 
     -   AutoScalingGroup name : bangau-asg
-
-    -   (*Switch to Launch Configuration*) Launch configuration :
-        banga-lc-1
-
+    -   (*Switch to Launch Configuration*) Launch configuration : bangau-lc-1
     -   Network
-
         -   VPC : bangau-vpc
-
         -   Subnets : bangau-private-a, bangau-private-b
-
         -   Load balancing : enabled : bangau-tg
-
         -   Group Size
-
             -   Desired : 1
-
             -   Minimum : 1
-
             -   Maximum : 3
-
         -   Scaling policies : Target tracking scaling policy
-
             -   Metric type : Average CPU utilization
-
             -   Target value : 50%
-
             -   Instances need : (default) 300
 
 ![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/asg7.png)
@@ -392,9 +361,7 @@ dibuat.
 ![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/asg10.png)
 ![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/asg11.png)
 
-Dan jika sudah selesai, maka nantinya pada registered target instance di
-Target Group akan muncul secara otomatis 1 instance yang di-*initiate*
-oleh ASG-nya, seperti berikut ini
+Dan jika sudah selesai, maka nantinya pada registered target instance di Target Group akan muncul secara otomatis 1 instance yang di-*initiate* oleh ASG-nya, seperti berikut ini
 
 ![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/asg12.png)
 
@@ -404,9 +371,7 @@ Pembuatan CodeDeploy
 Ada 3 komponen yang digunakan oleh CodeDeploy, yaitu
 
 1.  Aplications
-
 2.  Deployment Group
-
 3.  Deployment
 
 Dan masing – masing punya keterkaitan satu sama lain, jika ingin membuat *Deployment*, diharuskan untuk membuat *Deployment Group* dahulu, namun jika ingin membuat *Deployment Group*, diharuskan membuat *Application* terlebih dahulu.
@@ -421,8 +386,7 @@ Dan sebelum melakukan pembuatan ketiga komponen tersebut, kita perlu membuat sat
     mengontrol bagaimana flow proses updating aplikasi kita akan
     berjalan (seperti gambar di bawah)
 
-Sebagai contoh, misal ketika ingin melakukan update ke versi yang lebih baru, ternyata diperlukan mematikan service *nginx* terlebih dahulu sebelum dilakukan update, maka pada event *BeforeInstall* diharuskan
-untuk membuat script yang melakukan stop service nginx-nya. Dan kemudian pada event *AfterInstall* membuat script lagi untuk melakukan start service nginx nya kembali. Dan juga lebih jelasnya bisa dibaca referensi dari sini
+Sebagai contoh, misal ketika ingin melakukan update ke versi yang lebih baru, ternyata diperlukan mematikan service *nginx* terlebih dahulu sebelum dilakukan update, maka pada event *BeforeInstall* diharuskan untuk membuat script yang melakukan stop service nginx-nya. Dan kemudian pada event *AfterInstall* membuat script lagi untuk melakukan start service nginx nya kembali. Dan juga lebih jelasnya bisa dibaca referensi dari sini
 
 <https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file.html>
 
@@ -461,60 +425,55 @@ hooks:
 - BeforeInstall : timeout : masa tunggu ketika script-nya dijalankan
 - BeforeInstall : runas : user yang akan digunakan untuk menjalankan scriptnya
 
-3.  File remove\_unmodified\_file, yang mana berisi action yang
-    dilakukan sebelum aplikasinya diupdate, dan pada contoh aplikasi
-    disini sebelum dilakukan upate file index.html yang lama (yang sudah
-    berada di dalam instance sebelumnya dengan background color warna
-    lime, akan dihapus)
+{:start="3"}
+
+3.  File remove\_unmodified\_file, yang mana berisi action yang dilakukan sebelum aplikasinya diupdate, dan pada contoh aplikasi disini sebelum dilakukan upate file index.html yang lama (yang sudah berada di dalam instance sebelumnya dengan background color warna lime, akan dihapus)
 
 ```
 #!/bin/bash
 rm -rf /usr/share/nginx/html/index.html
 ```
 
-Dan jika ke-3 files tersebut sudah siap, upload semua files tersebut ke
-github.
+Dan jika ke-3 files tersebut sudah siap, upload semua files tersebut ke github.
 
 ### **Pembuatan Application**
 
-1.  Pergi ke service **CodeDeploy** > Application > dan klik
-    tombol **Create Application**
+1.  Pergi ke service **CodeDeploy** > Application > dan klik tombol **Create Application**
 
 ![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/cd2.png)
+
+{:start="2"}
 
 2.  Dan berikut ini detail konfigurasi application nya :
 
     a.  Application name : bangau-app-2
-
     b.  Compute platform : EC2/On-premises
 
 ![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/cd3.png)
 
 ### **Pembuatan Deployment Group**
 
-1.  Masuk ke application yang telah dibuat, kemudian pada menu
-    **Deployment Groups**, klik tombol **Create deployment group**
+1.  Masuk ke application yang telah dibuat, kemudian pada menu **Deployment Groups**, klik tombol **Create deployment group**
 
 ![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/cd4.png)
 
+{:start="2"}
+
 2.  Dan berikut ini detail konfigurasi deployment group nya :
 
-    a.  Deployment group name : bangau-dg-2
-
-    b.  Service role : CodeDeployServiceRole
-
-    c.  Deployment type : Blue/green
-
-    d.  Environment configuration : Automatically copy Amazon EC2 Auto
+    -  Deployment group name : bangau-dg-2
+    -  Service role : CodeDeployServiceRole
+    -  Deployment type : Blue/green
+    -    Environment configuration : Automatically copy Amazon EC2 Auto
         Scaling group : bangau-asg
 
-    e.  Deployment settings : Reroute traffice immediately
+    -    Deployment settings : Reroute traffice immediately
     - Terminate the original instances in the deployment group
     - 0 days, 0 hours, 5 minutes
     - Deployment configuration : CodeDeployDefault.AllatOnce
     
-    f.  Load balancer : Application Load Balancer or Network Load
-        Balancer : bangau-tg
+    - Load balancer : Application Load Balancer or Network Load
+      - Balancer : bangau-tg
 
 ![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/cd5.png)
 ![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/cd6.png)
@@ -533,12 +492,14 @@ Dan jika sudah selesai, maka deployment group nya seperti berikut ini
 
 ![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/cd10.png)
 
+{:start="2"}
+
 2.  Dan berikut ini konfigurasi detail dari deployment nya :
 
     a.  Revision type : My application is stored in GitHub
     - GitHub token name : fauzanooor
     - Repository name : {nama repository yang dari github nya}
-    -   Commit ID : {commit ID yang dari github nya}
+    - Commit ID : {commit ID yang dari github nya}
 
     b.  Additional deployment behavior settings
     -   Content options : Fail deployment
