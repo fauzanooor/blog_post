@@ -9,7 +9,7 @@ Persiapan
 
 ### **Topology**
 
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/topology.png)
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/topology.png)
 
 ### **VPC**
 
@@ -56,15 +56,15 @@ Persiapan
 
 ### **VPC – Screenshots**
 
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/vpc1.png)
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/vpc1.png)
 
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/vpc2.png)
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/vpc2.png)
 
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/vpc3.png)
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/vpc3.png)
 
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/vpc4.png)
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/vpc4.png)
 
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/vpc5.png)
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/vpc5.png)
 
 ### **Security Groups**
 
@@ -89,7 +89,7 @@ Melakukan pembuatan security group untuk instances dan ALB nya, dengan detail se
 
 ### **Security Groups – Screenshot**
 
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/sg1.png)
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/sg1.png)
 
 ### **EC2 Sebagai Golden Image / Instance**
 
@@ -116,17 +116,17 @@ Golden image atau instance ini dibuat untuk tujuan kalau nantinya ada perubahan 
 
 ### **EC2 Sebagai Golden Image / Instance – Screenshots**
 
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/ec2golden1.png)
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/ec2golden1.png)
 
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/ec2golden2.png)
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/ec2golden2.png)
 
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/ec2golden3.png)
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/ec2golden3.png)
 
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/ec2golden4.png)
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/ec2golden4.png)
 
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/ec2golden5.png)
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/ec2golden5.png)
 
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/ec2golden6.png)
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/ec2golden6.png)
 
 ### **Pembuatan IAM Roles**
 
@@ -138,7 +138,7 @@ IAM Roles yang dibuat disini untuk tujuan mengintegrasikan CodeDeploy nya dengan
     -   Trusted entity : CodeDeploy
     -   Permission : AWSCodeDeployRole
 
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/iam1.png)
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/iam1.png)
 
 ### **Initial Configuration of Golden Instance for Golden Image**
 
@@ -210,20 +210,20 @@ Capture Golden Instance as a AMI Golden Image
 1.  Masuk ke service EC2, pilih instance **bangau-golden** > klik
     kanan > image > create image
 
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/ami1.png)
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/ami1.png)
 
 {:start="2"}
 2.  Isi nama image-nya (bisa pakai format ini {nama-instance-ddmmyyy-hhmm}, kemudian centang **enable** no reboot agar ketika pembuatan image ini tidak me-restart instance yang sedang akan dibuat image-nya, dan klik tombol **create image**
 
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/ami2.png)
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/ami2.png)
 
 {:start="3"}
 
 3.  Masuk ke menu **AMIs** yang ada di sisi kiri, kemudian tunggu hingga image yang baru dibuat selesai (state pending -> available)
 
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/ami3.png)
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/ami3.png)
 
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/ami4.png)
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/ami4.png)
 
 Pembuatan Elastic Load Balancer
 -------------------------------
@@ -233,7 +233,7 @@ Pembuatan Elastic Load Balancer
 1.  Pergi ke services EC2 > Load Balancing > Target Groups, dan
     klik tombol **Create Target Group**
 
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/elb1.png)
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/elb1.png)
 
 {:start="2"}
 
@@ -247,23 +247,23 @@ Pembuatan Elastic Load Balancer
     -  Health check protocol : HTTP
     -  Health check path : /
 
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/elb2.png)
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/elb2.png)
 
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/elb3.png)
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/elb3.png)
 
 {:start="3"}
 
 3.  Dan jika target group sudah selesai dibuat, maka akan muncul seperti
     ini
 
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/elb4.png)
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/elb4.png)
 
 ### **Pembuatan Application Load Balancer**
 
 1.  Pergi ke services EC2 > Load Balancing > Load Balancers, dan
     klik tombol **Create Load Balancer**
 
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/elb5.png)
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/elb5.png)
 
 {:start="2"}
 
@@ -280,15 +280,15 @@ Pembuatan Elastic Load Balancer
     -  Security group : bangau-sg-lb
     -  Target group : bangau-tg
 
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/elb6.png)
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/elb6.png)
 
 Dan jika sudah selesai dibuat, maka akan menjadi seperti screenshot di bawah ini
 
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/elb7.png)
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/elb7.png)
 
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/elb8.png)
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/elb8.png)
 
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/elb9.png)
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/elb9.png)
 
 Pembuatan Auto Scaling Group
 ----------------------------
@@ -298,7 +298,7 @@ Sebenarnya bisa juga menggunakan *Launch Template* dan bahkan lebih baik pakai L
 
 1.  Masuk ke services EC2 > Auto Scaling > Launch Configurations, kemudian klik tombol **Create launch configurations**
 
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/asg1.png)
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/asg1.png)
 
 {:start="2"}
 
@@ -312,15 +312,15 @@ Sebenarnya bisa juga menggunakan *Launch Template* dan bahkan lebih baik pakai L
     -   Security group : existing : bangau-sg-ec2
     -   Key pair : *(menggunakan keypair yang sama seperti golden instance)*
 
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/asg2.png)
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/asg2.png)
 
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/asg3.png)
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/asg3.png)
 
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/asg4.png)
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/asg4.png)
 
 Dan jika sudah selesai, maka akan menjadi seperti ini
 
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/asg5.png)
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/asg5.png)
 
 ### **Pembuatan Auto Scaling Groups**
 
@@ -330,7 +330,7 @@ dibuat.
 1.  Masuk ke services EC2 > Auto Scaling > Launch Configurations,
     kemudian klik tombol **Create Auto Scaling Group**
 
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/asg6.png)
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/asg6.png)
 
 {:start="2"}
 
@@ -351,15 +351,15 @@ dibuat.
             -   Target value : 50%
             -   Instances need : (default) 300
 
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/asg7.png)
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/asg8.png)
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/asg9.png)
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/asg10.png)
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/asg11.png)
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/asg7.png)
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/asg8.png)
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/asg9.png)
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/asg10.png)
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/asg11.png)
 
 Dan jika sudah selesai, maka nantinya pada registered target instance di Target Group akan muncul secara otomatis 1 instance yang di-*initiate* oleh ASG-nya, seperti berikut ini
 
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/asg12.png)
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/asg12.png)
 
 Pembuatan CodeDeploy
 --------------------
@@ -386,7 +386,7 @@ Sebagai contoh, misal ketika ingin melakukan update ke versi yang lebih baru, te
 
 <https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file.html>
 
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/cd1.png)
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/cd1.png)
 
 ### **Contoh Aplikasi**
 
@@ -436,7 +436,7 @@ Dan jika ke-3 files tersebut sudah siap, upload semua files tersebut ke github.
 
 1.  Pergi ke service **CodeDeploy** > Application > dan klik tombol **Create Application**
 
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/cd2.png)
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/cd2.png)
 
 {:start="2"}
 
@@ -446,13 +446,13 @@ Dan jika ke-3 files tersebut sudah siap, upload semua files tersebut ke github.
 
     b.  Compute platform : EC2/On-premises
 
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/cd3.png)
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/cd3.png)
 
 ### **Pembuatan Deployment Group**
 
 1.  Masuk ke application yang telah dibuat, kemudian pada menu **Deployment Groups**, klik tombol **Create deployment group**
 
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/cd4.png)
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/cd4.png)
 
 {:start="2"}
 
@@ -472,14 +472,14 @@ Dan jika ke-3 files tersebut sudah siap, upload semua files tersebut ke github.
     - Load balancer : Application Load Balancer or Network Load
       - Balancer : bangau-tg
 
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/cd5.png)
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/cd6.png)
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/cd7.png)
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/cd8.png)
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/cd5.png)
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/cd6.png)
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/cd7.png)
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/cd8.png)
 
 Dan jika sudah selesai, maka deployment group nya seperti berikut ini
 
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/cd9.png)
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/cd9.png)
 
 
 ### **Pembuatan Deployment**
@@ -487,7 +487,7 @@ Dan jika sudah selesai, maka deployment group nya seperti berikut ini
 1.  Masuk ke deployment yang baru dibuat, dan klik tombol **Create
     deployment**
 
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/cd10.png)
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/cd10.png)
 
 {:start="2"}
 
@@ -501,48 +501,48 @@ Dan jika sudah selesai, maka deployment group nya seperti berikut ini
     b.  Additional deployment behavior settings
     -   Content options : Fail deployment
 
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/cd11.png)
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/cd11.png)
 
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/cd12.png)
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/cd12.png)
 
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/cd16.png)
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/cd16.png)
 
 Dan nanti jika sudah selesai dibuat, maka akan redirect ke halaman
 seperti berikut ini
 
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/cd14.png)
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/cd15.png)
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/cd14.png)
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/cd15.png)
 
 
 Result
 ---------
 ### **Sebelum**
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/result1.png)
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/result1.png)
 
 ### **Proses**
 1. Pada **step 1**, CodeDeploy melakukan pembuatan ASG beserta dengan instances-nya yang baru, yang mana instances baru ini nantinya akan me-replace instances lama dan juga dari ASG yang lama. Dan untuk ASG yang baru ini itu di-clone dari ASG yang lama, jadi secara konfigurasi sama persis, hanya berbeda nama ASG nya saja
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/result2.png)
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/result5.png)
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/result6.png)
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/result2.png)
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/result5.png)
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/result6.png)
 
 {:start="2"}
 
 2. Pada **step 2**, CodeDeploy akan melakukan installasi / update secara application level pada instances baru nya, dan juga melakukan register secara otomatis ke target group LB-nya, jadi pada saat proses ini traffic nya akan disebar ke instances yang baru dan juga instances yang lama. (Karena instances yg lama sudah registered di target group yang dipakai LB-nya)
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/result4.png)
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/result7.png)
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/result8.png)
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/result4.png)
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/result7.png)
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/result8.png)
 
 {:start="3"}
 
 3. Pada **step 3**, CodeDeploy akan melakukan un-register instances yang lama dari target group-nya
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/result10.png)
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/result9.png)
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/result10.png)
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/result9.png)
 
 
 {:start="4"}
 
 4. Pada **step 4**, CodeDeploy akan melakukan terminating instances yang lama beserta ASG yang lama juga
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/result11.png)
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/result11.png)
 
 ### **Setelah**
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/result14.png)
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/master/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/result14.png)
