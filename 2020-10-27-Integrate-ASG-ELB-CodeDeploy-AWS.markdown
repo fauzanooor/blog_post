@@ -4,9 +4,6 @@ title: "Integrate ASG + ELB + CodeDeploy - AWS"
 date: 2020-10-27
 ---
 
-**\[Integrating\] AWS ELB + ASG + CodeDeploy**
-==============================================
-
 Persiapan
 ---------
 
@@ -150,7 +147,7 @@ IAM Roles yang dibuat disini untuk tujuan mengintegrasikan CodeDeploy nya dengan
 ```
 $ sudo amazon-linux-extras install nginx1 -y
 $ sudo cd /usr/share/nginx/html/
-$ sudo rm -rf \*
+$ sudo rm -rf *
 $ sudo vi index.html
 ```
 
@@ -195,6 +192,7 @@ $ sudo systemctl enable nginx
 {:start="2"}
 
 2.  Install agent CodeDeploy
+
 ```
 $ sudo su
 # yum install ruby -y
@@ -270,7 +268,6 @@ Pembuatan Elastic Load Balancer
 {:start="2"}
 
 2.  Dan berikut ini detail konfigurasi load balancer nya :
-
     -  Load balancer type : Application Load Balancer
     -  Scheme : internet-facing
     -  IP address type : ipv4
@@ -295,7 +292,6 @@ Dan jika sudah selesai dibuat, maka akan menjadi seperti screenshot di bawah ini
 
 Pembuatan Auto Scaling Group
 ----------------------------
-
 ### **Pembuatan Launch Configurations**
 
 Sebenarnya bisa juga menggunakan *Launch Template* dan bahkan lebih baik pakai Launch Template ini dibandingkan dengan Launch Configurations, namun pada tutorial ini memakai Launch Configuration saja, biar lebih cepet hehe.
@@ -399,7 +395,7 @@ dan hanya mempunyai file *index.html* yang sama seperti pada langkah
 [Initial Configuration Golden
 Instance](#initial-configuration-of-golden-instance-for-golden-image)
 nya. Dan kemudian kita update background nya yang tadinya berwarna
-*lime*, menjadi warna kuning. Untuk hal ini, ada 3 files yang
+*lime*, menjadi warna *kuning*. Untuk hal ini, ada 3 files yang
 dibutuhkan, yaitu :
 
 1.  file index.html yang telah diupdate background-nya menjadi warna
@@ -415,7 +411,7 @@ files:
     destination: /usr/share/nginx/html/
 hooks:
   BeforeInstall:
-    - location: scripts/remove\_unmodified\_file
+    - location: scripts/remove_unmodified_file
       timeout: 300
       runas: root
 ```
@@ -427,7 +423,7 @@ hooks:
 
 {:start="3"}
 
-3.  File remove\_unmodified\_file, yang mana berisi action yang dilakukan sebelum aplikasinya diupdate, dan pada contoh aplikasi disini sebelum dilakukan upate file index.html yang lama (yang sudah berada di dalam instance sebelumnya dengan background color warna lime, akan dihapus)
+3.  File remove_unmodified_file, yang mana berisi action yang dilakukan sebelum aplikasinya diupdate, dan pada contoh aplikasi disini sebelum dilakukan upate file index.html yang lama (yang sudah berada di dalam instance sebelumnya dengan background color warna lime, akan dihapus)
 
 ```
 #!/bin/bash
@@ -447,6 +443,7 @@ Dan jika ke-3 files tersebut sudah siap, upload semua files tersebut ke github.
 2.  Dan berikut ini detail konfigurasi application nya :
 
     a.  Application name : bangau-app-2
+
     b.  Compute platform : EC2/On-premises
 
 ![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/cd3.png)
@@ -508,10 +505,44 @@ Dan jika sudah selesai, maka deployment group nya seperti berikut ini
 
 ![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/cd12.png)
 
-![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/cd13.png)
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/cd16.png)
 
 Dan nanti jika sudah selesai dibuat, maka akan redirect ke halaman
 seperti berikut ini
 
 ![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/cd14.png)
 ![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/cd15.png)
+
+
+Result
+---------
+### **Sebelum**
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/result1.png)
+
+### **Proses**
+1. Pada **step 1**, CodeDeploy melakukan pembuatan ASG beserta dengan instances-nya yang baru, yang mana instances baru ini nantinya akan me-replace instances lama dan juga dari ASG yang lama. Dan untuk ASG yang baru ini itu di-clone dari ASG yang lama, jadi secara konfigurasi sama persis, hanya berbeda nama ASG nya saja
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/result2.png)
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/result5.png)
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/result6.png)
+
+{:start="2"}
+
+2. Pada **step 2**, CodeDeploy akan melakukan installasi / update secara application level pada instances baru nya, dan juga melakukan register secara otomatis ke target group LB-nya, jadi pada saat proses ini traffic nya akan disebar ke instances yang baru dan juga instances yang lama. (Karena instances yg lama sudah registered di target group yang dipakai LB-nya)
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/result4.png)
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/result7.png)
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/result8.png)
+
+{:start="3"}
+
+3. Pada **step 3**, CodeDeploy akan melakukan un-register instances yang lama dari target group-nya
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/result10.png)
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/result9.png)
+
+
+{:start="4"}
+
+4. Pada **step 4**, CodeDeploy akan melakukan terminating instances yang lama beserta ASG yang lama juga
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/result11.png)
+
+### **Setelah**
+![](https://raw.githubusercontent.com/fauzanooor/blog_post/draft/img/2020-10-27-Integrate-ASG-ELB-CodeDeploy-AWS/result14.png)
